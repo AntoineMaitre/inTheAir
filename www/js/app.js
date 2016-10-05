@@ -32,23 +32,24 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers'])
         controller: 'AppCtrl'
       })
 
-  .state('app.login', {
-      url: '/login',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/login.html'
+      .state('app.login', {
+        url: '/login',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/login.html',
+            controller: 'MapCtrl'
+          }
         }
-      }
-    })
+      })
 
-  .state('app.search', {
-    url: '/search',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/search.html'
-      }
-    }
-  })
+      .state('app.map', {
+        url: '/map',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/map.html'
+          }
+        }
+      })
 
       .state('app.browse', {
         url: '/browse',
@@ -76,14 +77,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers'])
             controller: 'PlaylistCtrl'
           }
         }
-      })
-
-      .state('map', {
-        url: '/app/map',
-        templateUrl: 'templates/map.html',
-        controller: 'MapCtrl'
       });
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/login');
-});
+    // if none of the above states are matched, use this as the fallback
+    $urlRouterProvider.otherwise('/app/login');
+  });
 
