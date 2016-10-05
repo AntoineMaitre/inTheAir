@@ -44,13 +44,46 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     private func drawPolylines() {
-        let path = GMSMutablePath()
-        path.add(endLocation)
-        path.add(startLocation)
         
-        let rectangle = GMSPolyline(path: path)
-        rectangle.strokeWidth = 2
-        rectangle.map = mapView
+        let url = NSURL(string: "https://maps.googleapis.com/maps/api/directions/json?origin=\(startLocation.latitude),\(startLocation.longitude)&destination=\(endLocation.latitude),\(endLocation.longitude)&key=AIzaSyDxSgGQX6jrn4iq6dyIWAKEOTneZ3Z8PtU")
+        let request = NSURLRequest(url: url! as URL)
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        
+        let task = session.dataTask(with: request as URLRequest, completionHandler: {(data, response, error) in
+            
+            // notice that I can omit the types of data, response and error
+            do{
+                if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
+                    
+                    let routes = jsonResult.value(forKey: "routes") as! NSArray
+                    let routesDict = routes.object(at: 0) as! NSDictionary
+                    let overViewPolylineDict = routesDict.object(forKey: "overview_polyline") as! NSDictionary
+                    let overviewPolylinePoints = overViewPolylineDict.object(forKey: "points") as! String
+                    
+                    //Call on Main Thread
+                    DispatchQueue.main.async {
+                        self.addPolyLineWithEncodedStringInMap(encodedString: overviewPolylinePoints)
+                    }
+                }
+            }
+            catch{
+                
+                print("Somthing wrong")
+            }
+        });
+        
+        // do whatever you need with the task e.g. run
+        task.resume()
+    }
+    
+    func addPolyLineWithEncodedStringInMap(encodedString: String) {
+        let path = GMSMutablePath(fromEncodedPath: encodedString)
+        let polyLine = GMSPolyline(path: path)
+        
+        polyLine.strokeWidth = 2
+        polyLine.strokeColor = UIColor.blue
+        polyLine.map = mapView
     }
 }
 
