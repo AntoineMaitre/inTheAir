@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fourviere" translatesAutoresizingMaskIntoConstraints="NO" id="AoA-iv-3gK"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="AoA-iv-3gK"/>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In the air" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1A-Oo-ojP">
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="56"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -109,7 +109,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="fourviere" width="825" height="606"/>
+        <image name="launchScreen" width="1315" height="1048"/>
         <image name="menuGray" width="128" height="128"/>
     </resources>
 </document>
