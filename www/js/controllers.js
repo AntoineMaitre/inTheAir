@@ -1,5 +1,4 @@
 angular.module('starter.controllers', [])
-
   .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $location) {
 
     // With the new view caching in Ionic, Controllers are only called
@@ -69,7 +68,7 @@ angular.module('starter.controllers', [])
 
   .controller('MapCtrl', function ($scope, $stateParams, $cordovaGeolocation ) {
 
-    console.log('Doing map1', $stateParams.mapData);
+    // console.log('Doing map1', $stateParams.mapData);
     var options = {timeout: 10000, enableHighAccuracy: true};
 
     $cordovaGeolocation.getCurrentPosition(options).then(function (position) {
@@ -84,8 +83,29 @@ angular.module('starter.controllers', [])
 
       $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
+      var map = $scope.map;
+
+      // var poly = $http.json(url);
+
       //Wait until the map is loaded
       google.maps.event.addListenerOnce($scope.map, 'idle', function () {
+
+        // var flightPlanCoordinates = [
+        //   {lat: 37.772, lng: -122.214},
+        //   {lat: 21.291, lng: -157.821},
+        //   {lat: -18.142, lng: 178.431},
+        //   {lat: -27.467, lng: 153.027}
+        // ];
+        //
+        // var flightPath = new google.maps.Polyline({
+        //   path: poly.routes.overview_polyline.points,
+        //   geodesic: true,
+        //   strokeColor: '#FF0000',
+        //   strokeOpacity: 1.0,
+        //   strokeWeight: 2
+        // });
+        //
+        // flightPath.setMap(map);
 
         var marker = new google.maps.Marker({
           map: $scope.map,
@@ -105,5 +125,4 @@ angular.module('starter.controllers', [])
     }, function (error) {
       console.log("Could not get location");
     });
-
   });
