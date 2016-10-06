@@ -1,4 +1,4 @@
-<ion-side-menus enable-menu-with-back-views="false">
+<ion-side-menus enable-menu-with-back-views="true">
   <ion-side-menu-content>
     <ion-nav-bar class="bar-stable">
       <ion-nav-back-button>
@@ -18,17 +18,17 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close ng-click="login()">
-          Login
+        <ion-item menu-close href="#/app/login">
+          Deconnexion
         </ion-item>
         <ion-item menu-close href="#/app/map">
           Map
         </ion-item>
         <ion-item menu-close href="#/app/browse">
-          Browse
+          Itinéraire
         </ion-item>
         <ion-item menu-close href="#/app/playlists">
-          Playlists
+          Compte
         </ion-item>
       </ion-list>
     </ion-content>

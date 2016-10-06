@@ -11,7 +11,6 @@ angular.module('starter.controllers', [])
 
   // Form data for the login modal
   $scope.loginData = {};
-
   // Create the login modal that we will use later
   /*$ionicModal.fromTemplateUrl('templates/login.html', {
    scope: $scope
@@ -31,8 +30,20 @@ angular.module('starter.controllers', [])
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
+    $scope.loginData = {
+      username: $scope.loginData.username,
+      password: $scope.loginData.password
+    };
     console.log('Doing login', $scope.loginData);
-    $location.url("app/map");
+    if ($scope.loginData.username == 'admin' && $scope.loginData.password == 'admin')
+    {
+      $location.path("app/map");
+    }
+    else
+    {
+      $location.path("/");
+    }
+
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
     /*$timeout(function() {
@@ -42,22 +53,25 @@ angular.module('starter.controllers', [])
   };
   })
 
-  .controller('PlaylistsCtrl', function ($scope) {
-    $scope.playlists = [
-      {title: 'Reggae', id: 1},
-      {title: 'Chill', id: 2},
-      {title: 'Dubstep', id: 3},
-      {title: 'Indie', id: 4},
-      {title: 'Rap', id: 5},
-      {title: 'Cowbell', id: 6}
-    ];
-  })
+  //.controller('PlaylistsCtrl', function ($scope) {
+  //  $scope.playlists = [
+  //    {title: 'Reggae', id: 1},
+  //    {title: 'Chill', id: 2},
+  //    {title: 'Dubstep', id: 3},
+  //    {title: 'Indie', id: 4},
+  //    {title: 'Rap', id: 5},
+  //    {title: 'Cowbell', id: 6}
+  //  ];
+  //})
+  //
+  //.controller('PlaylistCtrl', function ($scope, $stateParams) {
+  //
+  //})
 
-  .controller('PlaylistCtrl', function ($scope, $stateParams) {
+  .controller('MapCtrl', function ($scope, $state, $cordovaGeolocation, $ionicHistory) {
+    $ionicHistory.clearCache();
+    $ionicHistory.clearHistory();
 
-  })
-
-  .controller('MapCtrl', function ($scope, $state, $cordovaGeolocation) {
     var options = {timeout: 10000, enableHighAccuracy: true};
 
     $cordovaGeolocation.getCurrentPosition(options).then(function (position) {
