@@ -1,11 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RMN-E1-ema">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
+        <!--Opening View Controller-->
+        <scene sceneID="y2o-sa-v9Q">
+            <objects>
+                <viewController id="RMN-E1-ema" customClass="OpeningViewController" customModule="InTheAir" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AH6-H9-4Rg"/>
+                        <viewControllerLayoutGuide type="bottom" id="QT4-Qq-EP7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RGq-a5-vQo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fourviere" translatesAutoresizingMaskIntoConstraints="NO" id="AoA-iv-3gK"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In the air" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1A-Oo-ojP">
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="56"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndb-vP-avW">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="dnB-fK-t8l"/>
+                                    <constraint firstAttribute="width" constant="100" id="uZp-Z1-XSQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="25"/>
+                                <state key="normal" title="Carte">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Mvz-0H-Jhp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="AoA-iv-3gK" secondAttribute="trailing" id="778-aW-iT6"/>
+                            <constraint firstItem="o1A-Oo-ojP" firstAttribute="top" secondItem="AH6-H9-4Rg" secondAttribute="bottom" constant="64" id="Mpj-DH-gjk"/>
+                            <constraint firstItem="AoA-iv-3gK" firstAttribute="leading" secondItem="RGq-a5-vQo" secondAttribute="leading" id="Rwd-kd-mte"/>
+                            <constraint firstItem="QT4-Qq-EP7" firstAttribute="top" secondItem="ndb-vP-avW" secondAttribute="bottom" constant="62" id="WY3-GT-Ewv"/>
+                            <constraint firstItem="AoA-iv-3gK" firstAttribute="top" secondItem="RGq-a5-vQo" secondAttribute="top" id="hKF-w3-XzK"/>
+                            <constraint firstItem="o1A-Oo-ojP" firstAttribute="centerX" secondItem="RGq-a5-vQo" secondAttribute="centerX" id="iXU-vl-0Of"/>
+                            <constraint firstItem="ndb-vP-avW" firstAttribute="centerX" secondItem="RGq-a5-vQo" secondAttribute="centerX" id="lFp-yS-SOM"/>
+                            <constraint firstItem="QT4-Qq-EP7" firstAttribute="top" secondItem="AoA-iv-3gK" secondAttribute="bottom" id="xBL-vL-U5c"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapButton" destination="ndb-vP-avW" id="OIA-7Q-HWJ"/>
+                        <outlet property="titleLabel" destination="o1A-Oo-ojP" id="KKK-Zh-px4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aTc-Kh-MFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-992.79999999999995" y="85.907046476761622"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -51,6 +109,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="fourviere" width="825" height="606"/>
         <image name="menuGray" width="128" height="128"/>
     </resources>
 </document>
