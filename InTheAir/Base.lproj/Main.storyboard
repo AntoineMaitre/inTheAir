@@ -39,7 +39,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Mvz-0H-Jhp"/>
+                                    <segue destination="8Fn-xH-aNd" kind="show" id="hcn-sT-5zW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -107,9 +107,119 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="90.404797601199405"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="7n2-qG-wcM">
+            <objects>
+                <viewController id="8Fn-xH-aNd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yiV-ts-29V"/>
+                        <viewControllerLayoutGuide type="bottom" id="RAi-IR-McW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f6K-d2-rEx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La carte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWI-Sw-Kei">
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="33"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cette carte vous permet de visualiser les zones polluées dans la ville :" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8W-gR-ewp">
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szq-0Y-gFo">
+                                <color key="backgroundColor" red="1" green="0.03091833315203707" blue="0.11172151110039052" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="6FC-vw-3a8"/>
+                                    <constraint firstAttribute="width" constant="50" id="uyo-6z-kRd"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="erj-1w-OuO">
+                                <color key="backgroundColor" red="1" green="0.49323588408549113" blue="0.22411784672860657" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Ug9-Fk-ToS"/>
+                                    <constraint firstAttribute="height" constant="15" id="xLa-Rv-TTh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PfB-ag-LeE">
+                                <color key="backgroundColor" red="0.55136328266285495" green="1" blue="0.28318037990410383" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="Vpf-MV-3Xx"/>
+                                    <constraint firstAttribute="width" constant="50" id="qVs-cA-wDr"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Les zones à forte pollution" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbU-19-Bur">
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Les zones à pollution moyenne" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQp-iw-YsP">
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Les zones à pollution faible" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwJ-4F-rzN">
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HQ-BC-mYT">
+                                <frame key="frameInset" minX="162" minY="617" width="51" height="30"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <state key="normal" title="Suivant">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="QXl-zM-bCn"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screenShot" translatesAutoresizingMaskIntoConstraints="NO" id="4ih-47-IlR">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="210" id="rNn-1e-cqJ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="B8W-gR-ewp" firstAttribute="leading" secondItem="4ih-47-IlR" secondAttribute="leading" id="3Tz-yg-9vJ"/>
+                            <constraint firstItem="wwJ-4F-rzN" firstAttribute="trailing" secondItem="4ih-47-IlR" secondAttribute="trailing" id="3qS-JU-hik"/>
+                            <constraint firstItem="erj-1w-OuO" firstAttribute="top" secondItem="szq-0Y-gFo" secondAttribute="bottom" constant="23" id="64u-Fx-R4P"/>
+                            <constraint firstItem="lbU-19-Bur" firstAttribute="centerY" secondItem="szq-0Y-gFo" secondAttribute="centerY" id="CJp-Wt-OBt"/>
+                            <constraint firstItem="kWI-Sw-Kei" firstAttribute="centerX" secondItem="f6K-d2-rEx" secondAttribute="centerX" id="D1K-uw-Var"/>
+                            <constraint firstItem="PfB-ag-LeE" firstAttribute="leading" secondItem="erj-1w-OuO" secondAttribute="leading" id="DxB-74-Wj0"/>
+                            <constraint firstItem="lbU-19-Bur" firstAttribute="trailing" secondItem="4ih-47-IlR" secondAttribute="trailing" id="HHL-o1-ktw"/>
+                            <constraint firstItem="4ih-47-IlR" firstAttribute="centerX" secondItem="f6K-d2-rEx" secondAttribute="centerX" id="OZQ-a6-8ND"/>
+                            <constraint firstItem="4ih-47-IlR" firstAttribute="centerY" secondItem="f6K-d2-rEx" secondAttribute="centerY" constant="-20" id="OpG-lI-nss"/>
+                            <constraint firstItem="PfB-ag-LeE" firstAttribute="top" secondItem="erj-1w-OuO" secondAttribute="bottom" constant="23" id="PC4-YU-rSj"/>
+                            <constraint firstItem="JQp-iw-YsP" firstAttribute="centerY" secondItem="erj-1w-OuO" secondAttribute="centerY" id="Sh8-LN-gbu"/>
+                            <constraint firstItem="7HQ-BC-mYT" firstAttribute="centerX" secondItem="f6K-d2-rEx" secondAttribute="centerX" id="Vq6-w8-jTU"/>
+                            <constraint firstItem="B8W-gR-ewp" firstAttribute="trailing" secondItem="4ih-47-IlR" secondAttribute="trailing" id="Ysb-TY-5lj"/>
+                            <constraint firstItem="B8W-gR-ewp" firstAttribute="top" secondItem="kWI-Sw-Kei" secondAttribute="bottom" constant="20" id="cIU-If-Hi9"/>
+                            <constraint firstItem="wwJ-4F-rzN" firstAttribute="leading" secondItem="PfB-ag-LeE" secondAttribute="trailing" constant="8" id="fU4-EB-gH6"/>
+                            <constraint firstItem="JQp-iw-YsP" firstAttribute="leading" secondItem="erj-1w-OuO" secondAttribute="trailing" constant="8" id="hDZ-qT-M6j"/>
+                            <constraint firstItem="RAi-IR-McW" firstAttribute="top" secondItem="7HQ-BC-mYT" secondAttribute="bottom" constant="20" id="i6I-JQ-Fhg"/>
+                            <constraint firstItem="szq-0Y-gFo" firstAttribute="leading" secondItem="4ih-47-IlR" secondAttribute="leading" id="j0S-4y-i8p"/>
+                            <constraint firstItem="lbU-19-Bur" firstAttribute="leading" secondItem="szq-0Y-gFo" secondAttribute="trailing" constant="8" id="oIa-X8-v2y"/>
+                            <constraint firstItem="wwJ-4F-rzN" firstAttribute="centerY" secondItem="PfB-ag-LeE" secondAttribute="centerY" id="rNl-yf-9cy"/>
+                            <constraint firstItem="kWI-Sw-Kei" firstAttribute="top" secondItem="yiV-ts-29V" secondAttribute="bottom" constant="30" id="s9X-cX-c5h"/>
+                            <constraint firstItem="JQp-iw-YsP" firstAttribute="trailing" secondItem="4ih-47-IlR" secondAttribute="trailing" id="w6i-LB-NB9"/>
+                            <constraint firstItem="szq-0Y-gFo" firstAttribute="top" secondItem="4ih-47-IlR" secondAttribute="bottom" constant="32" id="woH-28-M0N"/>
+                            <constraint firstAttribute="trailing" secondItem="4ih-47-IlR" secondAttribute="trailing" constant="30" id="y5y-qw-wFp"/>
+                            <constraint firstItem="4ih-47-IlR" firstAttribute="leading" secondItem="f6K-d2-rEx" secondAttribute="leading" constant="30" id="z0l-oi-h5B"/>
+                            <constraint firstItem="erj-1w-OuO" firstAttribute="leading" secondItem="szq-0Y-gFo" secondAttribute="leading" id="zdl-Xj-65Y"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rit-uN-EkZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-450.39999999999998" y="956.67166416791611"/>
+        </scene>
     </scenes>
     <resources>
         <image name="launchScreen" width="1315" height="1048"/>
         <image name="menuGray" width="128" height="128"/>
+        <image name="screenShot" width="320" height="251"/>
     </resources>
 </document>
