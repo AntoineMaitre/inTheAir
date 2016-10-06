@@ -43,5 +43,7 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>By accessing your location, this app can find you</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Need your location bro</string>
 </dict>
 </plist>

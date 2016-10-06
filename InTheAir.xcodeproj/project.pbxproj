@@ -127,6 +127,7 @@
 				TargetAttributes = {
 					FA50E80F1DA5193400A653B2 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 2A9FP4ZCF6;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -340,7 +341,9 @@
 			baseConfigurationReference = 05690453B51710A2DA5442D4 /* Pods-InTheAir.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2A9FP4ZCF6;
 				INFOPLIST_FILE = InTheAir/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexandreVlado.InTheAir;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -353,7 +356,9 @@
 			baseConfigurationReference = 27CD4374B981BC580BE9F78F /* Pods-InTheAir.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2A9FP4ZCF6;
 				INFOPLIST_FILE = InTheAir/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexandreVlado.InTheAir;
 				PRODUCT_NAME = "$(TARGET_NAME)";

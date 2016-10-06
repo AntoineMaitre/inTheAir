@@ -21,17 +21,28 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7aY-kW-Uap" customClass="GMSMapView">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2L-VX-aFl">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ilF-FV-DnJ"/>
+                                    <constraint firstAttribute="width" constant="50" id="xZV-yE-TgT"/>
+                                </constraints>
+                                <state key="normal" image="menuGray"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="7aY-kW-Uap" secondAttribute="trailing" id="5ch-5G-McY"/>
+                            <constraint firstItem="P2L-VX-aFl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="AeT-d9-Vhq"/>
                             <constraint firstItem="7aY-kW-Uap" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QCF-fd-z3F"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7aY-kW-Uap" secondAttribute="bottom" id="ZZr-BW-4xZ"/>
                             <constraint firstItem="7aY-kW-Uap" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ZrH-sD-VJt"/>
+                            <constraint firstItem="P2L-VX-aFl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="y5m-bH-edO"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="7aY-kW-Uap" id="w20-TX-r5K"/>
+                        <outlet property="menuButton" destination="P2L-VX-aFl" id="bqs-4f-QEM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -39,4 +50,7 @@
             <point key="canvasLocation" x="32.799999999999997" y="90.404797601199405"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menuGray" width="128" height="128"/>
+    </resources>
 </document>
