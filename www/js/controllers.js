@@ -58,6 +58,7 @@ angular.module('starter.controllers', [])
   })
 
   .controller('MapCtrl', function ($scope, $state, $cordovaGeolocation) {
+
     var options = {timeout: 10000, enableHighAccuracy: true};
 
     $cordovaGeolocation.getCurrentPosition(options).then(function (position) {
@@ -80,6 +81,8 @@ angular.module('starter.controllers', [])
           animation: google.maps.Animation.DROP,
           position: latLng
         });
+
+
 
         var infoWindow = new google.maps.InfoWindow({
           content: "Here I am!"

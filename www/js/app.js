@@ -36,8 +36,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers'])
         url: '/login',
         views: {
           'menuContent': {
-            templateUrl: 'templates/login.html',
-            controller: 'MapCtrl'
+            templateUrl: 'templates/login.html'
           }
         }
       })
@@ -46,7 +45,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers'])
         url: '/map',
         views: {
           'menuContent': {
-            templateUrl: 'templates/map.html'
+            templateUrl: 'templates/map.html',
+            controller: 'MapCtrl'
           }
         }
       })
