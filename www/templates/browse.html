@@ -1,5 +1,19 @@
-<ion-view view-title="Browse">
+<ion-view view-title="Itinéraire">
   <ion-content>
-    <h1>Browse</h1>
+    <form ng-submit="doMap()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Départ</span>
+          <input type="text" ng-model="mapData.depart" ng-value="depart">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Arrivée</span>
+          <input type="text" ng-model="mapData.arrive" ng-value="arrive">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Générer l'itinéraire</button>
+        </label>
+      </div>
+    </form>
   </ion-content>
 </ion-view>

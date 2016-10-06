@@ -41,32 +41,35 @@ angular.module('starter.controllers', [])
       else {
         $location.path("/");
       }
-
-      // Simulate a login delay. Remove this and replace with your login
-      // code if using a login system
-      /*$timeout(function() {
-       //$scope.closeLogin();
-       $location.url("/playlists");
-       }, 1000);*/
     };
   })
 
-  //.controller('PlaylistsCtrl', function ($scope) {
-  //  $scope.playlists = [
-  //    {title: 'Reggae', id: 1},
-  //    {title: 'Chill', id: 2},
-  //    {title: 'Dubstep', id: 3},
-  //    {title: 'Indie', id: 4},
-  //    {title: 'Rap', id: 5},
-  //    {title: 'Cowbell', id: 6}
-  //  ];
-  //})
-  //
-  //.controller('PlaylistCtrl', function ($scope, $stateParams) {
-  //
-  //})
+  .controller('BrowseCtrl', function ($scope, $location, $state) {
+    $scope.mapData = {};
 
-  .controller('MapCtrl', function ($scope, $state, $cordovaGeolocation) {
+    $scope.depart = "Jean Macé";
+    $scope.arrive = "Hôtel de Ville de Lyon, 1 Place de la Comédie, 69001 Lyon";
+    //$scope.mapData = {};
+
+    $scope.doMap = function () {
+      $scope.mapData = {
+        depart: $scope.depart,
+        arrive: $scope.arrive
+      };
+      //console.log('Doing map', $scope.mapData);
+      if ($scope.mapData.depart != '' && $scope.mapData.arrive != '') {
+        $state.go('app.map',{ mapData: $scope.mapData });
+        //$location.path("app/map",{mapData: $scope.mapData});
+      }
+      else {
+        $location.path("/browse");
+      }
+    };
+  })
+
+  .controller('MapCtrl', function ($scope, $stateParams, $cordovaGeolocation ) {
+
+    console.log('Doing map1', $stateParams.mapData);
     var options = {timeout: 10000, enableHighAccuracy: true};
 
     $cordovaGeolocation.getCurrentPosition(options).then(function (position) {
@@ -102,4 +105,5 @@ angular.module('starter.controllers', [])
     }, function (error) {
       console.log("Could not get location");
     });
+
   });
